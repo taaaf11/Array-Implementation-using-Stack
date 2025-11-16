@@ -66,7 +66,7 @@ public:
 };
 
 template <typename T>
-void print(stackarray<T> arr)
+void print(stackarray<T> &arr)
 {
     for (int i = 0; i < arr.size(); i++)
     {
