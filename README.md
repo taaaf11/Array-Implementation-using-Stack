@@ -17,7 +17,8 @@ So i thought of building just that.
 
 Assuming the given array is `{1, 2, 3, 4}`. So the resulting stack would look like:
 
-![[Pasted image 20251116101646.png]]
+<img width="2012" height="1026" alt="Pasted image 20251116101646" src="https://github.com/user-attachments/assets/86d003db-4fca-4372-9538-5ddf9832ec28" />
+
 
 
 The right side of the image shows "indexes" of element, that will be used by the user to access elements by our algorithm.
@@ -53,7 +54,8 @@ return temp_var
 
 Assuming the given array is `{1, 2, 3, 4}`. So the resulting stack would look like:
 
-![[Pasted image 20251116101646.png]]
+<img width="2012" height="1026" alt="Pasted image 20251116101646" src="https://github.com/user-attachments/assets/64b75202-9180-40df-b7ff-de87ccbceec9" />
+
 
 
 The right side of the image shows "indexes" of element, that will be used by the user to access elements by our algorithm.
