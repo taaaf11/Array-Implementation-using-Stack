@@ -15,13 +15,12 @@ public:
     }
 
     // This will allow intialize using array-like syntax
-    stackarray(initializer_list<T> l)
+    stackarray(const initializer_list<T>& l)
     {
-        length = 0;
+        length = l.size();
         for (const T &value : l)
         {
             originalStack.push(value);
-            length += 1;
         }
     }
 
@@ -60,6 +59,45 @@ public:
         }
 
         return required_value;
+    }
+
+    void add(const T& value) { 
+        originalStack.push(value);
+        length++;
+    }
+
+    void remove(int index) {
+        if (index < 0 || index >= length) {
+            cout << "The index is out of bounds." << endl;
+            return ;
+        }
+
+        if (index == length - 1) {
+            originalStack.pop();
+            return;
+        }
+
+        stack<T> auxStack;
+        int required_pops = length - index;
+        
+        for (int i = 1; i <= required_pops; i++) {
+            // T el = originalStack.top();
+            // cout << el << endl;
+            auxStack.push(originalStack.top());
+            originalStack.pop();
+        }
+
+        
+        if (!auxStack.empty())
+            auxStack.pop();
+
+        while (!auxStack.empty())
+        {
+            originalStack.push(auxStack.top());
+            auxStack.pop();
+        }
+
+        length--;
     }
 
     int size() const { return length; }
