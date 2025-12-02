@@ -1,6 +1,20 @@
+/*
+bits/stdc++.h contains:
+
+* initializer_list - for using initializer list
+* iostream         - for cout and cin
+* stdexcept        - for runtime_exception
+
+*/
+
 #include <bits/stdc++.h>
-#include <initializer_list>
 using namespace std;
+
+
+struct IndexOutOfRangeException: runtime_error {
+    IndexOutOfRangeException(): runtime_error("Index out of range.") {}
+};
+
 
 template <typename T>
 class stackarray
@@ -28,8 +42,7 @@ public:
     {
         if (index < 0 || index >= length)
         {
-            cout << "Out of bounds!" << endl;
-            exit(1);
+            throw IndexOutOfRangeException();
         }
 
         stack<T> auxStack;
@@ -68,8 +81,7 @@ public:
 
     void remove(int index) {
         if (index < 0 || index >= length) {
-            cout << "The index is out of bounds." << endl;
-            return ;
+            throw IndexOutOfRangeException();
         }
 
         if (index == length - 1) {
@@ -88,6 +100,8 @@ public:
         }
 
         
+        // The last pushed element is the one which we
+        // want to remove
         if (!auxStack.empty())
             auxStack.pop();
 
